@@ -43,8 +43,8 @@ def webServer(port=13331):
 
       #Fill in end
                
-      for i in f: #for line in file
-        #Fill in start - append your html file contents 
+      for i in f: #for line in file - append your html file contents to output data
+        #Fill in start 
         outputdata += i
         #Fill in end 
       
@@ -61,11 +61,11 @@ def webServer(port=13331):
       # Send response message for invalid request due to the file not being found (404)
       # Remember the format you used in the try: block!
       #Fill in start
-      body = b"<html><body><h1>404 Not FOund</h1><body></html>"
+      body = b"<html><body><h1>404 Not Found</h1><body></html>" #Declare body because we are not reading file
 
       status404 = b"HTTP/1.1 404 Not Found\r\n"
       conType = b"Content Type: text/html; charset=UTF-8\r\n"
-      conLength = b"Content Length: " + str(len(body)).encode(FORMAT) + b"\r\n"
+      conLength = b"Content Length: " + str(len(body)).encode(FORMAT) + b"\r\n" #no need for content length in 200 ok. 
       connectionEnd = b"Connection: close\r\n"
       serverName = b"Server: webserver\r\n"
 
